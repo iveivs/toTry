@@ -1,66 +1,21 @@
-// task 1
-
-// var a = 5;
-// console.log(a);
-// let b = 10;
-// console.log(b);
-// const c = 13;
-// console.log(c);
-
-
-// a = 15;
-// console.log(a);
-// b = 110;
-// console.log(b);
-// c = 113;
-// console.log(c);
-
-// - - - - - - - - - 
-
-// task 2
-
-// const a = 100;
-// a = 20;
-// console.log(a);
-
-//  - - -
-
-// console.log(a)
-// let a = 15;
-// console.log(a);
-
-//  - - - - - 
-
-// console.log(a);
-// var a;
-// a = 10;
-// console.log(a);
-
-//  - - - - - -
-
-// console.log(10 != 10);
-// console.log(10 != 8);
-
-// const a = {};
-// const b = a;
-// console.log(a === b);
 
 //  - - - - - - - -
-// const a = 0;
-// const b = 0;
-
+// РАБОТА С ФУНКЦИЯМИ
+// ПРИМИТИВНЫЙ КАЛЬКУЛЯТОР
 // function calc(a,b, oper) {
-    // if (oper == '+') {
-    //     return a + b
-    // }
+//     if (oper == '+') {
+//         return a + b
+//     } else if(oper == '-'){
+//         return a - b
+//     }
 
-    // ещё один вариант того же самого
-    // switch (oper) {
-    //     case '+':
-    //         return a + b
-    // }
-    
+//     // ещё один вариант того же самого
+//     // switch (oper) {
+//     //     case '+':
+//     //         return a + b
+//     // }
 // }
+
 // console.log(calc(2,4, '+'));
 //  - - - - - - - -
 
@@ -174,6 +129,99 @@
 // console.log(newArr);
 //  - - - - - - - - - - - - -
 
+// ПОМЕЩАЕМ ДАННЫЕ ИЗ МАССИВА В HTML
+
+const names = ['Bob', 'Klar', 'Petya', 'Ilya', 'Viktoriya'];
+const names2 = ['2Bob', '2Klar', '2Petya', '2Ilya', '2Viktoriya'];
+let bodyElem = document.querySelector("ul")
+let bodyElem2 = document.querySelector("div")
+let testElem = document.querySelector(".div-test")
+
+// Простой вариант
+testElem.innerHTML = `
+                            <p>${names[0]}</p>
+                    `
+//  - - -                     
+// Первый вариант
+function render() {
+    for(let i = 0; i<names.length; i++) {
+        bodyElem.insertAdjacentHTML(
+        'beforeend', 
+        getNoteTemplate(names[i])
+    )
+    }
+    
+}
+render()
+
+function getNoteTemplate(title) {
+    return `
+            <li>${title}</li>
+            `
+}
+// Второй вариант
+
+function render2(arr) {
+    for(let i = 0; i<arr.length; i++) {
+        bodyElem.insertAdjacentHTML(
+        'beforeend', 
+        `<p> ${arr[i]}</p>`
+    )
+    }
+    
+}
+render2(names2);
+//  - - - - - - - - - - - - -
 
 
 
+
+
+
+
+// task 1
+
+// var a = 5;
+// console.log(a);
+// let b = 10;
+// console.log(b);
+// const c = 13;
+// console.log(c);
+
+
+// a = 15;
+// console.log(a);
+// b = 110;
+// console.log(b);
+// c = 113;
+// console.log(c);
+
+// - - - - - - - - - 
+
+// task 2
+
+// const a = 100;
+// a = 20;
+// console.log(a);
+
+//  - - -
+
+// console.log(a)
+// let a = 15;
+// console.log(a);
+
+//  - - - - - 
+
+// console.log(a);
+// var a;
+// a = 10;
+// console.log(a);
+
+//  - - - - - -
+
+// console.log(10 != 10);
+// console.log(10 != 8);
+
+// const a = {};
+// const b = a;
+// console.log(a === b);
