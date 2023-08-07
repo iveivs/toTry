@@ -1,4 +1,4 @@
-/* 
+
 // cоздали массив 
 const names = ['Bob', 'Joana', "Qwerty", 'Eva']
 
@@ -7,28 +7,28 @@ const greatWoman = 'Qwerty'
 
 // создали переменную в которую мы положим индекс искомой переменной
 const indexFind = names.indexOf(greatWoman)
-console.log(indexFind);
-console.log(greatWoman);
+// console.log(indexFind);
+// console.log(greatWoman);
 
 // меняем значение искомой переменной с помощью переменной индекса
 names[indexFind] = "NBVCX"
-console.log(names[indexFind]);
-console.log(names);
+// console.log(names[indexFind]);
+// console.log(names);
 
 // НОВЫЙ метод, который позволяет не менять массив при замене одного из его значений
 const greatMan = 'Bob'
 const newIndexFind = names.indexOf(greatMan)
 const newNames = names.with(newIndexFind, 'Bernard')
-console.log(newNames);
-console.log(names);
-*/
+// console.log(newNames);
+// console.log(names);
+
 
 // обзор метода map (map трансформирует текущий массив во что-то другое)
 // ШАГ 1
-// const capitalNames = names.map(function(name) {
-//     // const newName = name + '!'
-//     return name.toUpperCase()
-// })
+const capitalNames = names.map(function(name) {
+    // const newName = name + '!'
+    return name.toUpperCase()
+})
 // console.log(capitalNames);
 
 // ШАГ 2

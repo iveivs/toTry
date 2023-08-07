@@ -111,6 +111,7 @@ function computeNumbersWithAction(inp1, inp2, actionSymbol) {
         return num1 - num2
     } 
 }
+debugger
 
 submitBtn.onclick = function() {
     const result = computeNumbersWithAction(input1, input2, action)
