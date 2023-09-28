@@ -24,6 +24,10 @@ const result3 = sumNumbers2(2, 3, 5)
 // console.log(result1); // 15
 // console.log(result2); // 60
 // console.log(result3); // 10
+
+// Решение с сайта
+const sumNumbers3 = (...nums) => 
+    nums.reduce((a, b) => a + b, 0);
 // - - - - - - - - - - - - - - - - - - - - - - -
 
 
@@ -56,6 +60,10 @@ const shortMax = Math.max.apply(null, numbers1)
 const emptyArray = [];
 const maxEmpty = findMaxValue(emptyArray);
 // console.log(maxEmpty); // undefined
+
+// Решение с сайта
+const findMaxValue2 = (nums) => 
+    nums.reduce((a, b) => Math.max(a, b), nums[0]);
 // - - - - - - - - - - - - - - - - - - - - - - -
 
 // Задание #3
@@ -98,6 +106,9 @@ const someEmptyArray = [];
 // console.log(calculateAverage(someEmptyArray)); // 0
 // console.log(calculateAverage2(someEmptyArray)); // 0
 
+// Решение с сайта
+const calculateAverage = (nums) =>
+    nums.length ? nums.reduce((a, b) => a + b, 0) / nums.length : 0;
 // - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 // Задание #4
@@ -123,6 +134,22 @@ function isPalindrome(someString) {
 // console.log(isPalindrome('level')); // true
 // console.log(isPalindrome('radar')); // true
 // console.log(isPalindrome('hello')); // false
+
+// Решение с сайта
+const isPalindrome = (str) => 
+    str.toLowerCase() === str.split('').reverse().join('');
+
+// - - -
+// второй вариант
+function isPalindrome2(str) {
+    const len = Math.floor(str.length / 2);
+    for (var i = 0; i < len; i++) {
+        if (str[i] !== str[str.length - i - 1]) {
+            return false;
+        }
+    }
+    return true;
+}
 // - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
@@ -131,10 +158,10 @@ function isPalindrome(someString) {
 // Напишите функцию removeDuplicates(), которая принимает массив и возвращает новый массив без дубликатов. 
 
 const num1 = [1, 2, 3, 3, 4, 5, 5];
-function removeDuplicates(someArr) {
-    const uniqArray = [...new Set(someArr)]
-    return uniqArray
-}
+    function removeDuplicates(someArr) {
+        const uniqArray = [...new Set(someArr)]
+        return uniqArray
+    }
 // console.log(removeDuplicates(num1));  // [1, 2, 3, 4, 5]
 
 const num2 = [10, 20, 30, 30, 40, 40, 50];
@@ -142,22 +169,40 @@ const num2 = [10, 20, 30, 30, 40, 40, 50];
 
 const emptyArr = [];
 // console.log(removeDuplicates(emptyArr));  // []
+
+
 // Другие решения
 const array = ['Bob', 'Max', 'Anna', 'Max', 'Piter', 'Anna']
-uniqArray = Array.from(new Set(array))
+
+
+// вариант 1
+const uniqArray = Array.from(new Set(array))
 // console.log(uniqArray);
 
+
+// вариант 1.2
+const removeDuplicates = arr => 
+	new Array(...new Set(arr));
+
+// вариант 2
 const uniqArray2 = array.filter((item, index) => {
     // console.log(array.indexOf(item));
     return index === array.indexOf(item)
 })
 // console.log(uniqArray2);
 
+// вариант 2.2
+const removeDuplicates = arr => 
+    array.filter((value, index) => array.indexOf(value) === index);
+
+
+// вариант 3
 const uniqArray3 = array.reduce((uniq, item) => {
     return uniq.includes(item) ? uniq : [...uniq, item]
 }, [])
-
 // console.log(uniqArray3);
+
+
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -172,10 +217,16 @@ const uniqArray3 = array.reduce((uniq, item) => {
 
 // Пример использования функции:
 function createCounter(value) {
-	
+	function createCounter(value) {
+        const inc = () => value++;
+        const dec = () => value--;
+        const get = () => value;
+    
+        return { inc, dec, get };
+    }
 }
 
-// const { inc, dec, get } = createCounter(5);
+const { inc, dec, get } = createCounter(5);
 // console.log(get()); // 5
 // inc();
 // inc();
