@@ -21,6 +21,7 @@ for(let i = 0; i < 100; i++) {
         // console.log(i);
     }
 }
+// - - - - - - - - - - - - -
 
 // Задание #3
 
@@ -30,8 +31,80 @@ for(let i = 0; i < 100; i++) {
 
 const arr = [1, 10, 15, -100, -23, 19, 15032]
 const arr2 = arr.map(element => element * 1.25)
-const arr3 = arr.filter(element => element * 1.25)
+const arr3 = []
+for (let i = 0; i < arr.length; i++) {
+    arr3.push(arr[i] * 1.25);
+    
+}
+// console.log(arr);
+// console.log(arr2);
+// console.log(arr3);
+// - - - - - - - - - - - - - - - - - - - - -
 
-console.log(arr);
-console.log(arr2);
-console.log(arr3);
+
+// Задание #4
+
+// Создайте функцию, объявленную с помощью ключевого слова function, с именем sayHello(). 
+// Она принимает в параметры name и возвращает строку вида: "Hello, {name}!".
+// Если функция была вызвана без указания name, то выведите строку "Hello, someone!".
+// Закомментируйте функцию и напишите аналогичную, но в виде стрелочной функции.
+function sayHello(name = 'someone') {
+    return `Hello, ${name}!`
+}
+const sayHello2 = (name) => `Hello, ${name}!`
+// console.log(sayHello('Ivan'));
+// console.log(sayHello());
+// console.log(sayHello2('Petr'));
+// - - - - - - - - - - - - - - - - - - - - -
+
+// Задание #5
+
+// Напишите функцию calc(), которая принимает в параметры a и b, а также operation. 
+// В зависимости от переданной операции (+, -, /, *) возвращаем необходимый результат выражения с числами. 
+function calc(a, b, operation) {
+    let result = 0
+    if((operation === '+')) {
+        return result = a + b
+    }
+    else if((operation === '-')) {
+        return result = a - b
+    }
+    else if((operation === '*')) {
+        return result = a * b
+    }
+    else if((operation === '/')) {
+        return result = a / b
+    }
+    return result
+}
+
+//   console.log(calc(1, 2, '+')); // 3
+//   console.log(calc(1, 2, '-')); // -1
+//   console.log(calc(2, 2, '*')); // 4
+//   console.log(calc(4, 2, '/')); // 2
+// - - - - - - - - - - - - - - - - - - - - -
+
+// Задание #6
+
+// Создайте переменную age, присвоив ей числовое значение.
+// Создайте переменную category, присвоив ей с помощью тернарного оператора значение:
+// "Взрослый" — если age больше или равно 18
+// "Детский" — если age меньше 18
+// Выведите переменные в консоль.
+
+const age = 20
+let category = age >= 18 ? 'Adult' : 'Children'
+// console.log(age,category );
+// - - - - - - - - - - - - - - - - - - - - -
+
+
+// Задание #7
+
+// Создайте переменные a и b с числовыми значениями.
+// Создайте переменную c, в которую с помощью тернарного оператора присвоите наибольшее значение (или a, или b).
+// Выведите значение c в консоль.
+
+let x = 4
+let y = 8
+let z = x > y ? x : y
+// console.log(z);
