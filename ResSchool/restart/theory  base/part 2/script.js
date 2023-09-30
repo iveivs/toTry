@@ -51,6 +51,10 @@ function countWords(someString) {
 }
 
 // console.log(countWords(sentence)); // 4
+
+// Решение с сайта
+
+const countWords = str => str.split(' ').length
 // - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
@@ -63,6 +67,7 @@ const fullName = "John Doe";
 const initials = getInitials(fullName);
 
 // Решение через строку
+
 function getInitials(someString) {
     someString = someString.split(' ')
     let tempStr = ''
@@ -91,6 +96,11 @@ function getInitials(someString) {
 }
 
 // console.log(initials); // "J. D."
+
+// Решение с сайта
+
+const getInitials = name => name.split(' ').map((el) => `${el[0].toUpperCase()}.`).join('');
+
 // - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 // Задание #4
@@ -116,6 +126,9 @@ function generateGoogleString(num) {
 // console.log(generateGoogleString(4)); // Goooogle
 // console.log(generateGoogleString(0)); // Google
 // console.log(generateGoogleString(-2)); // Google
+
+// Решение с сайта
+const generateGoogleString = (times = 0) => `G${'o'.repeat(Math.max(2, times))}gle`
 // - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 // Задание #5
@@ -173,3 +186,15 @@ function grab(str) {
 }
 
 // grab("Привет как дела ?");
+
+// Решение с сайта
+const countVowels = (str) => {
+    const vowels = ['a', 'e', 'i', 'o', 'u', 'а', 'е', 'ё', 'и', 'о', 'у', 'ы', 'э', 'ю', 'я'];
+    let count = 0;
+
+    for (let i = 0; i < str.length; i++) {
+        if (vowels.includes(str[i].toLowerCase())) {
+            count++;
+        }
+    }
+}

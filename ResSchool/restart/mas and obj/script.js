@@ -158,12 +158,11 @@ const updateObj = {
 	favColor: 'blue',
 	money: 11450
 };
+
 const obj3 = obj 
-console.log(obj3); 
 obj3.age = updateObj.age 
 obj3.favColor = updateObj.favColor 
-obj3.money = updateObj.money 
-console.log(obj3);
+obj3.money = updateObj.money
 
 // решение с сайта
 const obj2 = {...obj1, ...updateObj } 

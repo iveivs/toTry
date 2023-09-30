@@ -75,4 +75,54 @@ function getTimeUntilDate(someDate){
 const timeUntilTargetDate = getTimeUntilDate(targetDate);
 console.log(timeUntilTargetDate);
 // { days: 100, hours: 20, minutes: 45, seconds: 31 }
+//  - - - - - - - - - - - - - - - - - - - - - - - - -
 
+
+// Задание #4
+
+// Напишите функцию isWeekends(), которая проверяет, является ли указанная дата выходным днем
+
+const date3 = new Date('2027-07-10');  // Суббота
+const date4 = new Date('2027-07-12');  // Понедельник
+
+function isWeekends(someDate) {
+    if(someDate.getDay() > 5) {
+        return true
+    } else {
+        return false
+    }
+}
+
+
+// console.log(isWeekends(date3));  // true
+// console.log(isWeekends(date4));  // false
+
+// Решение через стрелочную функцию и тринарный оператор
+const isWeekend = (someDate) => someDate.getDay() > 5 ? true : false
+// console.log(isWeekend(date3));  // true
+// console.log(isWeekend(date4));  // false
+//  - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+// Задание #5
+
+// Напишите функцию, которая проверяет, является ли год високосным. Возвращает true, если да, иначе — false. 
+
+// console.log(isLeapYear(2023)); // false
+// console.log(isLeapYear(2024)); // true
+//  - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+// Задание #6
+
+// Напишите функцию, которая возвращает последнее число месяца.
+
+
+// июнь 2027
+// console.log(getLastDayOfMonth(2027, 5)); // 30
+
+// февраль 2027
+// console.log(getLastDayOfMonth(2027, 1)); // 28
+
+// январь 2027
+// console.log(getLastDayOfMonth(2027, 0)); // 31
