@@ -1,0 +1,14 @@
+.img-box {
+    margin-top: 100px;
+    text-align: center;
+    
+}
+
+.img-box img{
+    height: 400px;
+    transition: .3s;
+    cursor: pointer;
+}
+.img-box img:hover {
+    filter: brightness(70%);
+}
