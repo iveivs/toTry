@@ -1,0 +1,4 @@
+let a = 'asd'
+let b = 0
+let c = false
+console.log(a || b || c);
