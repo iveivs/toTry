@@ -1,0 +1,3 @@
+function joinNumbersFromRange(start, finish) {
+    
+}
