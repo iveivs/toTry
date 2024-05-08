@@ -1,0 +1,11 @@
+.list-style {
+    background-color: #eeeeee;
+    color: #6b6b6b;
+    cursor: pointer;
+    
+}
+.cover {
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
